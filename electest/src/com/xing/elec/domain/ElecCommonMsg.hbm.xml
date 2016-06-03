@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecCommonMsg" table="Elec_CommonMsg">
+		<id name="comID" type="string" length="50" column="comID">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="stationRun" type="string" length="5000" column="stationRun"></property>
+		<property name="devRun" type="string" length="5000" column="devRun"></property>
+		<property name="createDate" type="timestamp" length="60" column="createDate"></property>
+	</class>
+</hibernate-mapping>

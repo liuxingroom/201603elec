@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecExportFields" table="Elec_ExportFields">
+		<id name="belongTo" type="string" length="50" column="belongTo">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="expFieldName" type="string" length="500" column="expFieldName"></property>
+		<property name="expNameList" type="string" length="500" column="expNameList"></property> 
+		<property name="noExpFieldName" type="string" length="500" column="noExpFieldName"></property>
+		<property name="noExpNameList" type="string" length="500" column="noExpNameList"></property>
+	</class>
+</hibernate-mapping>

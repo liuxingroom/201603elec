@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecFileUpload" table="Elec_FileUpload">
+		<id name="seqId" type="integer" length="30">
+			<column name="seqId"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="projId" type="string" length="50" column="projId"></property>
+		<property name="belongTo" type="string" length="50" column="belongTo"></property>
+		<property name="fileName" type="string" length="50" column="fileName"></property>
+		<property name="fileUrl" type="string" length="500" column="fileUrl"></property>
+		<property name="progressTime" type="string" length="50" column="progressTime"></property>
+		<property name="comment" type="string" length="500" column="comment"></property>
+	</class>
+</hibernate-mapping>

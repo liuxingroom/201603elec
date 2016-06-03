@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!-- 连接数据库的信息 -->
+	<property name="hibernate.connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="hibernate.connection.url">
+		jdbc:mysql://localhost:3306/elec
+	</property>
+	<property name="hibernate.connection.username">root</property>
+	<property name="hibernate.connection.password">xing</property>
+	<!-- 设置事务自动提交 
+		<property name="hibernate.connection.autocommit">true</property>-->
+	<!-- 其他配置 -->
+	<property name="hibernate.dialect">
+		org.hibernate.dialect.MySQL5Dialect
+	</property>
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<property name="hibernate.show_sql">true</property>
+
+	<!--配置hibernate的二级缓存  -->
+	<!-- 1.开启二级缓存 -->
+	<property name="hibernate.cache.use_second_level_cache">
+		true
+	</property>
+	<!-- 2.要指定缓存的供应商（eache）的缓存 -->
+	<property name="hibernate.cache.provider_class">
+		org.hibernate.cache.EhCacheProvider
+	</property>
+	<!-- 4.在hibernate 配置文件中启动查询缓存 -->
+	<property name="hibernate.cache.use_query_cache">true</property>
+	
+	<!-- 添加映射 -->
+	<mapping resource="com/xing/elec/domain/ElecText.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecCommonMsg.hbm.xml" />
+	<mapping
+		resource="com/xing/elec/domain/ElecCommonMsgContent.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecSystemDDL.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecUser.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecUserFile.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecPopedom.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecRole.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecRolePopedom.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecExportFields.hbm.xml" />
+	<mapping resource="com/xing/elec/domain/ElecFileUpload.hbm.xml" />
+	
+	<!-- 指定使用二级缓存的类 放在maping下面 -->
+	<!-- 3:配置类级别的二级缓存 -->
+	<class-cache usage="read-write"
+		class="com.xing.elec.domain.ElecSystemDDL" />
+</session-factory>
+</hibernate-configuration>

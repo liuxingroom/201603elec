@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecText" table="Elec_Text">
+		<id name="textID" type="string" length="50" column="textID">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="textName" type="string" length="5000" column="textName"></property>
+		<property name="textDate" type="date" length="30" column="textDate"></property>
+		<property name="textRemark" type="string" length="5000" column="textRemark"></property>
+	</class>
+</hibernate-mapping>

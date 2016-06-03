@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecUser" table="Elec_User">
+		<id name="userID" length="50" type="string" column="userID" >
+			<generator class="uuid"></generator>
+		</id>
+		
+		<property name="jctID" type="string" length="50" column="jctID"></property>
+		<property name="jctUnitID" type="string" length="50" column="jctUnitID"></property>
+		<property name="userName" type="string" length="50" column="userName"></property>
+		<property name="logonName" type="string" length="50" column="logonName"></property>
+		<property name="logonPwd" type="string" length="50" column="logonPwd"></property>
+		<property name="sexID" type="string" length="50" column="sexID"></property>
+		<property name="birthday" type="date" length="50" column="birthday"></property>
+		<property name="address" type="string" length="50" column="address"></property>
+		<property name="contactTel" type="string" length="50" column="contactTel"></property>
+		<property name="email" type="string" length="50" column="email"></property>
+		<property name="mobile" type="string" length="50" column="mobile"></property>
+		<property name="isDuty" type="string" length="50" column="isDuty"></property>
+		<property name="postID" type="string" length="50" column="postID"></property>
+		<property name="onDutyDate" type="date" length="50" column="onDutyDate"></property>
+		<property name="offDutyDate" type="date" length="50" column="offDutyDate"></property>
+		<property name="remark" type="string" length="100" column="remark"></property>
+		
+		
+		<!-- 
+			set元素针对的就是Classes类中的Set属性
+			cascade  级联操作
+			   null  默认值
+			   save-update
+			      	在保存classes对象的时候，针对student进行保存或者更新的操作
+			      	在更新classes对象的时候，针对student进行保存或者更新的操作
+			   all
+			   delete
+			inverse  关系操作
+			   default:classes维护classes与student之间的关系
+			   true:   classes不维护classes与student之间的关系
+			   false:  classes维护classes与student之间的关系
+		 -->
+		<!-- 一个用户对应多个文件 -->
+		<set name="elecUserFiles" table="Elec_User_File" inverse="true" order-by="progressTime desc"  cascade="delete">
+			
+			<!-- 
+					外键
+		     -->
+			<key>
+				<column name="userID"></column>
+			</key>
+			<one-to-many class="com.xing.elec.domain.ElecUserFile"/>
+		</set>
+		<!-- inverse="true" ：角色一端说了算，用来控制关联关系 -->
+		<set name="elecRoles" table="elec_user_role" inverse="true">
+			<key>
+				<column name="userID"></column>
+			</key>
+			<many-to-many class="com.xing.elec.domain.ElecRole" column="roleID"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

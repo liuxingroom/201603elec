@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.xing.elec.domain.ElecPopedom" table="Elec_Popedom">
+		<composite-id>
+           <key-property name="mid" type="string" length="30">
+               <column name="mid"/>
+           </key-property>
+           <key-property name="pid" type="string" length="30">
+               <column name="pid"/>
+           </key-property>
+        </composite-id>		
+		<property name="name" type="string" length="50" column="name"></property>
+		<property name="url" type="string" length="500" column="url"></property>
+		<property name="icon" type="string" length="500" column="icon"></property>
+		<property name="target" type="string" length="500" column="target"></property>
+		<property name="isParent" type="string" length="50" column="isParent"></property>
+		<property name="isMenu" type="string" length="50"  column="isMenu"></property>
+		
+	</class>
+</hibernate-mapping>
