@@ -11,7 +11,7 @@
   1.dao，service,action层的重构，来提高代码的重用性。<br>
   2.FCK文本编译器在项目中的使用。<br>
   3.js悬浮窗口的应用。<br>
- #4.数据字典对数据的控制。(使用数据库的二级缓存)<br>
+ ##4.数据字典对数据的控制。(使用数据库的二级缓存)<br>
  #5.jQuery+Ajax实现页面无刷新的数据显示。<br>
   6.hibernate中一对多、多对多的级联操作，与关系操作。<br>
  #7.hibernate中hql语句优化如：联合查询(left join on 、right join on 、 join on)、标量查询<br>
