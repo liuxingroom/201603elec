@@ -11,11 +11,11 @@
   1.dao，service,action层的重构，来提高代码的重用性。<br>
   2.FCK文本编译器在项目中的使用。<br>
   3.js悬浮窗口的应用。<br>
- ##4.数据字典对数据的控制。(使用数据库的二级缓存)<br>
- #5.jQuery+Ajax实现页面无刷新的数据显示。<br>
+ *4.数据字典对数据的控制。(使用数据库的二级缓存)<br>
+ *5.jQuery+Ajax实现页面无刷新的数据显示。<br>
   6.hibernate中一对多、多对多的级联操作，与关系操作。<br>
- #7.hibernate中hql语句优化如：联合查询(left join on 、right join on 、 join on)、标量查询<br>
+ *7.hibernate中hql语句优化如：联合查询(left join on 、right join on 、 join on)、标量查询<br>
   8.hibernate中缓存的应用（一级缓存、二级缓存（采用echache））<br>
- #9.使用lucene进行数据检索<br>
- #10.使用webservice分布式远程调用技术<br>
- #11.使用filter+session进行粗颗粒度权限控制，interceptor+注解实现细颗粒度的权限控制<br>
+ *9.使用lucene进行数据检索<br>
+ *10.使用webservice分布式远程调用技术<br>
+ *11.使用filter+session进行粗颗粒度权限控制，interceptor+注解实现细颗粒度的权限控制<br>
